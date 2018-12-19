@@ -20,7 +20,7 @@
         </activity>
         <activity android:name=".ui.LoginActivity">
         </activity>
-        <activity android:name=".ui.SignInActivity">
+        <activity android:name=".ui.SignUpActivity">
         </activity>
         <activity android:name=".ui.GameActivity">
         </activity>
