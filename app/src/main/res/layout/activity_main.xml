@@ -1,9 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
         tools:context=".ui.MainActivity">
 
-</FrameLayout>
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pokemon_logo"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal|bottom"
+                android:paddingBottom="32dp"
+                android:text="JoKenPokemon!" />
+
+
+    </FrameLayout>
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_main_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jogar"/>
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_main_ranking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ranking"/>
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_main_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sobre"/>
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_main_leave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sair"/>
+
+</LinearLayout>
