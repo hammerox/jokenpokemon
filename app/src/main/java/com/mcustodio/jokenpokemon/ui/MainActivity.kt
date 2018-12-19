@@ -1,7 +1,8 @@
-package com.mcustodio.jokenpokemon
+package com.mcustodio.jokenpokemon.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.mcustodio.jokenpokemon.R
 
 class MainActivity : AppCompatActivity() {
 
