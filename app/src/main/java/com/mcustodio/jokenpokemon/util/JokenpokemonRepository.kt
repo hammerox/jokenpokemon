@@ -1,6 +1,7 @@
 package com.mcustodio.jokenpokemon.util
 
 import android.util.Log
+import com.mcustodio.jokenpokemon.data.Score
 import com.mcustodio.jokenpokemon.data.ScoreRequestBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,6 +18,11 @@ object JokenpokemonRepository {
         .build()
 
     private val service = retrofit.create(JokenpokemonService::class.java)
+
+
+    fun getScores(callback: Callback<List<Score>>) {
+        service.getScores().enqueue(callback)
+    }
 
     fun sendScore(score: ScoreRequestBody, onResponse: ((call: Call<Unit>, response: Response<Unit>) -> Unit)) {
         service.postScore(score).enqueue(object : Callback<Unit> {
