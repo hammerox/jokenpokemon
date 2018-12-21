@@ -24,6 +24,7 @@ class LoginActivity : AppCompatActivity() {
             if (inputEmail == lastLoggedInUser?.email && inputPassword == lastLoggedInUser.password) {
                 preferences.loggedInUser = lastLoggedInUser
                 val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Invalid access", Toast.LENGTH_LONG).show()

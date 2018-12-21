@@ -25,19 +25,26 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
-    private var score = 0
+    private var score = 0L
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        image_game_grass.setOnClickListener { startGame(Element.Grass) }
-        image_game_fire.setOnClickListener { startGame(Element.Fire) }
-        image_game_water.setOnClickListener { startGame(Element.Water) }
+        image_game_grass.setOnClickListener { chooseAndShowResult(Element.Grass) }
+        image_game_fire.setOnClickListener { chooseAndShowResult(Element.Fire) }
+        image_game_water.setOnClickListener { chooseAndShowResult(Element.Water) }
+
+        startNewGame()
     }
 
-    private fun startGame(userChoice: Element) {
+    override fun onStart() {
+        super.onStart()
+        startNewGame()
+    }
+
+    private fun chooseAndShowResult(userChoice: Element) {
         image_game_yourchoice.setImageDrawable(resources.getDrawable(userChoice.imageRes, applicationContext.theme))
 
         val randomIndex = Random.nextInt(0,3)
@@ -59,6 +66,14 @@ class GameActivity : AppCompatActivity() {
                 showGameOverScreen()
             }
         }
+    }
+
+    private fun startNewGame() {
+        text_game_result.text = "Escolha sua jogada!"
+        linear_game_options.visibility = View.VISIBLE
+        image_game_yourchoice.setImageResource(android.R.color.transparent)
+        image_game_enemychoice.setImageResource(android.R.color.transparent)
+        score = 0L
     }
 
     private fun showGameOverScreen() {
