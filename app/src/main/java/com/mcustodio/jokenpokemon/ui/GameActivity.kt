@@ -40,18 +40,18 @@ class GameActivity : AppCompatActivity() {
     private fun startGame(userChoice: Element) {
         image_game_yourchoice.setImageDrawable(resources.getDrawable(userChoice.imageRes, applicationContext.theme))
 
-        val randomIndex = Random.nextInt(0,2)
+        val randomIndex = Random.nextInt(0,3)
         val enemyChoice = Element.values().get(randomIndex)
         image_game_enemychoice.setImageDrawable(resources.getDrawable(enemyChoice.imageRes, applicationContext.theme))
 
         when {
             userChoice.winsAgainst() == enemyChoice -> {
                 score += 2
-                text_game_result.text = "VITÓRIA: +2 pontos"
+                text_game_result.text = "VITÓRIA: +2 insignias"
             }
             userChoice == enemyChoice -> {
                 score += 1
-                text_game_result.text = "EMPATE: +1 ponto"
+                text_game_result.text = "EMPATE: +1 insignia"
             }
             else -> {
                 linear_game_options.visibility = View.INVISIBLE
