@@ -1,0 +1,1 @@
+/home/mauricio/AndroidStudioProjects/JoKenPokemon/buildSrc/build/classes/kotlin/main/Versions.class
